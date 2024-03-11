@@ -199,7 +199,7 @@ class _DashboardState extends State<Dashboard> {
                           ],
                         ),
                       );
-                    }))
+                    })),
           ],
         ),
 
@@ -281,7 +281,16 @@ class _DashboardState extends State<Dashboard> {
                 icon: const Icon(Icons.logout)),
           ],
         ),
-        body: isLoading ? bodyProgress : body);
+        body: isLoading ? bodyProgress : body,
+        floatingActionButton: Align(
+          alignment: Alignment.bottomRight,
+          child: FloatingActionButton(
+            onPressed: () =>
+                _launchURL("https://wa.me/+917602419285/?text=Hello"),
+            child: Image.asset("assets/whatsapp_icon.png", width: 45),
+            backgroundColor: Colors.green,
+          ),
+        ));
   }
 
   _launchURL(message) async {

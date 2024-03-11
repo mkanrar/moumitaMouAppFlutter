@@ -39,7 +39,7 @@ class _LoginDemoState extends State<LoginDemo> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 236, 104, 186),
+      backgroundColor: Color.fromRGBO(184, 51, 97, 1),
       appBar: AppBar(
         title: const Text("Moumita Mou Boutique"),
         toolbarHeight: 0,
@@ -110,10 +110,10 @@ class _LoginDemoState extends State<LoginDemo> {
   }
 
   Future<void> navigateToDashboardPage() async {
-    setState(() {
-      loadingMsg = "Logged in successfully...";
-    });
     if (phoneController.text != "") {
+      setState(() {
+        loadingMsg = "Logged in successfully...";
+      });
       final url =
           "http://moumitamouboutique.in/public/api/v1/get-login/${phoneController.text}";
       final uri = Uri.parse(url);
